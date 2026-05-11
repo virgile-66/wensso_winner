@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WENSSO GOD WINNER – Accueil</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ─── HERO ─── */
+#accueil{min-height:100vh;background:linear-gradient(135deg,var(--blue) 0%,var(--blue-mid) 55%,#1E3A6E 100%);position:relative;display:flex;align-items:center;overflow:hidden;padding-top:72px}
+.hero-shapes{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hs{position:absolute;border-radius:50%;opacity:.08}
+.hs1{width:600px;height:600px;background:var(--orange);top:-150px;right:-150px;animation:pulse 6s ease-in-out infinite}
+.hs2{width:300px;height:300px;background:#fff;bottom:-80px;left:-80px;animation:pulse 8s ease-in-out infinite reverse}
+.hs3{width:150px;height:150px;background:var(--orange);top:40%;right:20%;animation:pulse 5s ease-in-out infinite 1s}
+.hero-grid{max-width:1200px;margin:auto;padding:60px 24px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,107,0,.15);border:1px solid rgba(255,107,0,.35);color:var(--orange-light);padding:6px 16px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px;animation:fadeUp .8s ease both}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--orange-light);border-radius:50%;animation:blink 1.5s infinite}
+h1{font-family:'Poppins',sans-serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;color:#fff;line-height:1.12;margin-bottom:16px;animation:fadeUp .8s .1s ease both}
+.hero-accent{color:var(--orange-light)}
+.hero-slogan{font-size:1.1rem;color:rgba(255,255,255,.75);font-weight:300;margin-bottom:32px;font-style:italic;animation:fadeUp .8s .2s ease both}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;animation:fadeUp .8s .3s ease both}
+.pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;padding:10px 18px;border-radius:12px;font-size:13.5px;font-weight:500;display:flex;align-items:center;gap:8px;backdrop-filter:blur(6px)}
+.pill em{font-style:normal;color:var(--orange-light)}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;animation:fadeUp .8s .4s ease both}
+.hero-visual{display:flex;flex-direction:column;gap:16px;animation:fadeRight .8s .2s ease both}
+.hero-main-img{border-radius:18px;overflow:hidden;box-shadow:0 16px 48px rgba(11,46,110,.35)}
+.hero-main-img img{width:100%;height:220px;object-fit:cover;display:block}
+.hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:22px;backdrop-filter:blur(12px);transition:.25s}
+.hero-card:hover{background:rgba(255,255,255,.12);transform:translateX(4px)}
+.hc-icon{font-size:2rem;margin-bottom:10px}
+.hc-title{font-family:'Poppins',sans-serif;font-weight:700;color:#fff;font-size:1rem;margin-bottom:4px}
+.hc-desc{color:rgba(255,255,255,.6);font-size:13px;line-height:1.5}
+
+/* ─── STATS BAR ─── */
+.stats-bar{background:var(--white);border-top:1px solid #E8EEFF;border-bottom:1px solid #E8EEFF}
+.stats-bar .inner{display:grid;grid-template-columns:repeat(4,1fr);padding:0}
+.stat-item{padding:32px 24px;text-align:center;border-right:1px solid #E8EEFF;transition:.25s}
+.stat-item:last-child{border-right:none}
+.stat-item:hover{background:var(--off-white)}
+.stat-num{font-family:'Poppins',sans-serif;font-weight:800;font-size:2.2rem;color:var(--blue);margin-bottom:4px}
+.stat-num span{color:var(--orange)}
+.stat-label{font-size:12.5px;color:var(--gray);font-weight:500;text-transform:uppercase;letter-spacing:.8px}
+
+/* ─── APERÇU SERVICES ─── */
+#apercu{background:var(--off-white)}
+.apercu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.apercu-card{background:#fff;border-radius:16px;padding:28px;text-align:center;box-shadow:var(--shadow);transition:.3s;text-decoration:none;color:inherit;border:1.5px solid transparent}
+.apercu-card:hover{transform:translateY(-6px);border-color:rgba(255,107,0,.25);box-shadow:0 20px 50px rgba(11,46,110,.14)}
+.apercu-icon{font-size:2.4rem;margin-bottom:12px;display:block}
+.apercu-title{font-family:'Poppins',sans-serif;font-weight:700;color:var(--blue);font-size:1rem;margin-bottom:6px}
+.apercu-desc{color:var(--gray);font-size:13px;line-height:1.55}
+.apercu-arrow{display:inline-block;margin-top:12px;color:var(--orange);font-weight:700;font-size:13px}
+
+/* ─── MINI TEMOIGNAGES ─── */
+#mini-testi{background:var(--white)}
+.mini-testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.mini-testi-card{background:var(--off-white);border-radius:16px;padding:22px;border-left:4px solid var(--orange)}
+.mt-stars{color:var(--orange);font-size:.9rem;margin-bottom:8px}
+.mt-text{color:var(--gray);font-size:.9rem;font-style:italic;line-height:1.6;margin-bottom:14px}
+.mt-name{font-weight:700;color:var(--blue);font-size:.88rem}
+.mt-role{font-size:12px;color:var(--gray)}
+.see-all-btn{display:block;text-align:center;margin-top:32px}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-visual{display:none}
+  .stats-bar .inner{grid-template-columns:repeat(2,1fr)}
+  .stat-item:nth-child(2){border-right:none}
+}
+@media(max-width:480px){
+  .hero-btns{flex-direction:column}
+  .btn-primary,.btn-outline{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo-wrap">
+      <img src="logo.jpg" alt="WGW Logo" class="logo-mark-img">
+      <div class="logo-text">WENSSO GOD WINNER<span>Bénin · Services Complets</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Accueil</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="apropos.html">À Propos</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="temoignages.html">Témoignages</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="tel:+22965339727" class="nav-cta">📞 Appeler</a>
+    <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMenu()">🏠 Accueil</a>
+  <a href="services.html" onclick="closeMenu()">🛠️ Services</a>
+  <a href="apropos.html" onclick="closeMenu()">ℹ️ À Propos</a>
+  <a href="galerie.html" onclick="closeMenu()">🖼️ Galerie</a>
+  <a href="temoignages.html" onclick="closeMenu()">⭐ Témoignages</a>
+  <a href="contact.html" onclick="closeMenu()">📩 Contact</a>
+  <a href="tel:+22965339727" style="background:var(--orange);margin-top:8px;font-weight:700">📞 Appeler maintenant</a>
+  <a href="https://wa.me/22965339727" target="_blank" style="background:#25D366;font-weight:700">💬 WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section id="accueil">
+  <div class="hero-shapes">
+    <div class="hs hs1"></div><div class="hs hs2"></div><div class="hs hs3"></div>
+  </div>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-badge">🌍 Disponible partout au Bénin</div>
+      <h1>Services <span class="hero-accent">Rapides</span><br>& de Qualité<br>au Bénin</h1>
+      <p class="hero-slogan">"Rapide – Propre – Fiable partout au Bénin"</p>
+      <div class="hero-pills">
+        <div class="pill">📍 <em>Disponible partout</em> au Bénin</div>
+        <div class="pill">🚚 <em>Livraison</em> gratuite</div>
+        <div class="pill">⚡ <em>Service</em> rapide</div>
+      </div>
+      <div class="hero-btns">
+        <a href="tel:+22965339727" class="btn-primary">📞 Appeler maintenant</a>
+        <a href="https://wa.me/22965339727" target="_blank" class="btn-outline">💬 WhatsApp</a>
+        <a href="contact.html" class="btn-outline">📩 Nous contacter</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-main-img">
+        <img src="serv_2.png" alt="Services WENSSO GOD WINNER">
+      </div>
+      <div class="hero-card">
+        <div class="hc-icon">🖨️</div>
+        <div class="hc-title">Impression & Graphisme</div>
+        <div class="hc-desc">Impressions dès 25F, photocopies nettes à 10F</div>
+      </div>
+      <div class="hero-card">
+        <div class="hc-icon">📶</div>
+        <div class="hc-title">Zone WiFi & Cyber Café</div>
+        <div class="hc-desc">Internet haut débit à partir de 100F</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="inner">
+    <div class="stat-item reveal"><div class="stat-num">500<span>+</span></div><div class="stat-label">Clients satisfaits</div></div>
+    <div class="stat-item reveal"><div class="stat-num">3<span>+</span></div><div class="stat-label">Années d'expérience</div></div>
+    <div class="stat-item reveal"><div class="stat-num">4</div><div class="stat-label">Types de services</div></div>
+    <div class="stat-item reveal"><div class="stat-num">100<span>%</span></div><div class="stat-label">Satisfaction garantie</div></div>
+  </div>
+</div>
+
+<!-- APERÇU SERVICES -->
+<section id="apercu">
+  <div class="inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Nos Services</div>
+      <h2 class="section-title">Tout ce dont vous avez besoin</h2>
+      <p class="section-sub">Une gamme complète de services professionnels à prix accessibles, partout au Bénin.</p>
+    </div>
+    <div class="apercu-grid">
+      <a href="services.html" class="apercu-card reveal">
+        <span class="apercu-icon">🖨️</span>
+        <div class="apercu-title">Impression & Graphisme</div>
+        <div class="apercu-desc">Impression dès 25F, photocopie 10F, bâches, affiches, cartes de visite.</div>
+        <div class="apercu-arrow">Voir →</div>
+      </a>
+      <a href="services.html" class="apercu-card reveal">
+        <span class="apercu-icon">🌐</span>
+        <div class="apercu-title">Services en Ligne</div>
+        <div class="apercu-desc">CIP, acte de naissance, registre de commerce et autres démarches administratives.</div>
+        <div class="apercu-arrow">Voir →</div>
+      </a>
+      <a href="services.html" class="apercu-card reveal">
+        <span class="apercu-icon">📶</span>
+        <div class="apercu-title">WiFi & Cyber Café</div>
+        <div class="apercu-desc">Connexion haut débit, assistance informatique, espace de travail numérique dès 100F.</div>
+        <div class="apercu-arrow">Voir →</div>
+      </a>
+      <a href="services.html" class="apercu-card reveal">
+        <span class="apercu-icon">🧹</span>
+        <div class="apercu-title">Nettoyage Professionnel</div>
+        <div class="apercu-desc">Nettoyage de bureaux, boutiques et chambres. Propre et soigné, sur devis.</div>
+        <div class="apercu-arrow">Voir →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MINI TÉMOIGNAGES -->
+<section id="mini-testi">
+  <div class="inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Ils nous font confiance</div>
+      <h2 class="section-title">Avis de nos clients</h2>
+    </div>
+    <div class="mini-testi-grid">
+      <div class="mini-testi-card reveal">
+        <div class="mt-stars">★★★★★</div>
+        <p class="mt-text">« Service impeccable ! Mes bâches étaient prêtes en un temps record. La qualité est vraiment au rendez-vous. »</p>
+        <div class="mt-name">Adjobi Médard</div>
+        <div class="mt-role">Commerçant, Cotonou</div>
+      </div>
+      <div class="mini-testi-card reveal">
+        <div class="mt-stars">★★★★★</div>
+        <p class="mt-text">« J'ai fait mes démarches en ligne grâce à eux. Rapide, propre et sans stress. Personnel très accueillant ! »</p>
+        <div class="mt-name">Fatou Kéïta</div>
+        <div class="mt-role">Étudiante, Porto-Novo</div>
+      </div>
+      <div class="mini-testi-card reveal">
+        <div class="mt-stars">★★★★★</div>
+        <p class="mt-text">« Le nettoyage de mon bureau a été fait de façon très professionnelle. Prix très abordables. Je recommande ! »</p>
+        <div class="mt-name">Kossou Damien</div>
+        <div class="mt-role">Chef d'entreprise, Parakou</div>
+      </div>
+    </div>
+    <div class="see-all-btn">
+      <a href="temoignages.html" class="btn-primary" style="background:var(--blue);box-shadow:0 6px 24px rgba(11,46,110,.3)">⭐ Voir tous les témoignages</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="index.html" class="logo-wrap">
+        <img src="logo.jpg" alt="WGW Logo" class="logo-mark-img">
+        <div class="logo-text" style="color:#fff">WENSSO GOD WINNER<span style="color:rgba(255,255,255,.45)">Bénin · Services Complets</span></div>
+      </a>
+      <p class="footer-desc">Impression, graphisme, services en ligne, cyber café et nettoyage. Rapide, propre, fiable partout au Bénin.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Impression & Graphisme</a></li>
+        <li><a href="services.html">Services en Ligne</a></li>
+        <li><a href="services.html">Zone WiFi & Cyber</a></li>
+        <li><a href="services.html">Nettoyage</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Rapide</h4>
+      <ul>
+        <li><a href="tel:+22965339727">📞 0165339727</a></li>
+        <li><a href="mailto:ahononwenceslas@gmail.com">📧 Email</a></li>
+        <li><a href="https://wa.me/22965339727" target="_blank">💬 WhatsApp</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100086452178644" target="_blank">📘 Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 <span>WENSSO GOD WINNER</span> · Tous droits réservés · Bénin</p>
+    <p>Fait avec ❤️ au <span>Bénin</span></p>
+  </div>
+</footer>
+
+<a href="https://wa.me/22965339727" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <div class="wa-float-tooltip">Écrire sur WhatsApp</div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="main.js"></script>
+</body>
+</html>

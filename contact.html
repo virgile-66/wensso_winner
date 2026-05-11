@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – WENSSO GOD WINNER</title>
+<link rel="stylesheet" href="style.css">
+<style>
+#contact-page{background:var(--white);padding:60px 24px 88px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-bottom:60px}
+.contact-info h3{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.5rem;color:var(--blue);margin-bottom:24px}
+.contact-item{display:flex;align-items:flex-start;gap:14px;padding:16px;border-radius:14px;margin-bottom:10px;transition:.25s;text-decoration:none;color:inherit}
+.contact-item:hover{background:var(--off-white)}
+.ci-icon{width:48px;height:48px;min-width:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem}
+.ci-icon.blue{background:rgba(11,46,110,.08)}
+.ci-icon.orange{background:rgba(255,107,0,.1)}
+.ci-icon.green{background:rgba(37,211,102,.1)}
+.ci-icon.fb{background:rgba(24,119,242,.1)}
+.ci-label{font-size:11.5px;font-weight:600;color:var(--gray);letter-spacing:.8px;text-transform:uppercase;margin-bottom:3px}
+.ci-value{font-size:.95rem;font-weight:500;color:var(--blue)}
+.map-container{border-radius:20px;overflow:hidden;box-shadow:var(--shadow);border:2px solid #E8EEFF;height:420px;position:relative}
+.map-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#EEF2FF,#DBEAFE);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.map-placeholder a{text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--blue);font-weight:600;font-size:.95rem}
+.map-placeholder span.pin{font-size:3rem;animation:bounce 1.5s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.contact-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.social-row{display:flex;gap:12px;margin-top:16px}
+.social-btn{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.1rem;transition:.25s}
+.social-btn.fb{background:#1877F2;color:#fff}
+.social-btn.wa{background:#25D366;color:#fff;font-size:.9rem}
+.social-btn:hover{transform:scale(1.1)}
+
+/* Form */
+.contact-form-section{background:var(--off-white);padding:60px 24px}
+.form-box{background:#fff;border-radius:22px;padding:40px;box-shadow:var(--shadow);max-width:680px;margin:0 auto}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.form-group label{font-size:13px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:.6px}
+.form-group input,.form-group textarea,.form-group select{padding:13px 16px;border:1.5px solid #E0E7FF;border-radius:10px;font-family:'Poppins',sans-serif;font-size:.95rem;color:var(--dark);transition:.2s;background:#fff}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--blue-light);box-shadow:0 0 0 3px rgba(46,111,217,.1)}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-submit{background:linear-gradient(135deg,var(--orange),var(--orange-light));color:#fff;padding:14px 32px;border:none;border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;transition:.25s;box-shadow:0 6px 20px rgba(255,107,0,.35)}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(255,107,0,.45)}
+.form-note{text-align:center;margin-top:14px;font-size:12.5px;color:var(--gray)}
+
+@media(max-width:900px){
+  .contact-grid{grid-template-columns:1fr;gap:32px}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .contact-cta-row{flex-direction:column}
+  .form-box{padding:24px 16px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo-wrap">
+      <img src="logo.jpg" alt="WGW Logo" class="logo-mark-img">
+      <div class="logo-text">WENSSO GOD WINNER<span>Bénin · Services Complets</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="apropos.html">À Propos</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="temoignages.html">Témoignages</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="tel:+22965339727" class="nav-cta">📞 Appeler</a>
+    <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMenu()">🏠 Accueil</a>
+  <a href="services.html" onclick="closeMenu()">🛠️ Services</a>
+  <a href="apropos.html" onclick="closeMenu()">ℹ️ À Propos</a>
+  <a href="galerie.html" onclick="closeMenu()">🖼️ Galerie</a>
+  <a href="temoignages.html" onclick="closeMenu()">⭐ Témoignages</a>
+  <a href="contact.html" onclick="closeMenu()">📩 Contact</a>
+  <a href="tel:+22965339727" style="background:var(--orange);margin-top:8px;font-weight:700">📞 Appeler</a>
+  <a href="https://wa.me/22965339727" target="_blank" style="background:#25D366;font-weight:700">💬 WhatsApp</a>
+</div>
+
+<div class="page-hero">
+  <div class="section-tag">Parlons de votre projet</div>
+  <h1>Contactez-Nous</h1>
+  <p>🚚 Livraison gratuite partout au Bénin · Réponse rapide garantie</p>
+</div>
+
+<section id="contact-page">
+  <div class="inner">
+    <div class="contact-grid">
+      <div class="reveal">
+        <h3>Nos coordonnées</h3>
+        <a href="tel:+22965339727" class="contact-item">
+          <div class="ci-icon blue">📞</div>
+          <div><div class="ci-label">Téléphone</div><div class="ci-value">0165339727</div></div>
+        </a>
+        <a href="mailto:ahononwenceslas@gmail.com" class="contact-item">
+          <div class="ci-icon orange">📧</div>
+          <div><div class="ci-label">Email</div><div class="ci-value">ahononwenceslas@gmail.com</div></div>
+        </a>
+        <a href="https://wa.me/22965339727" target="_blank" class="contact-item">
+          <div class="ci-icon green">💬</div>
+          <div><div class="ci-label">WhatsApp</div><div class="ci-value">Nous écrire sur WhatsApp</div></div>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100086452178644" target="_blank" class="contact-item">
+          <div class="ci-icon fb">📘</div>
+          <div><div class="ci-label">Facebook</div><div class="ci-value">WENSSO GOD WINNER</div></div>
+        </a>
+        <div class="contact-item" style="cursor:default">
+          <div class="ci-icon blue">📍</div>
+          <div><div class="ci-label">Adresse</div><div class="ci-value"><a href="https://maps.app.goo.gl/HQcLNQxFM9LfY7s8A" target="_blank" style="color:var(--blue);text-decoration:none">Bohicon, Bénin — Voir sur Maps</a></div></div>
+        </div>
+        <div class="contact-item" style="cursor:default">
+          <div class="ci-icon orange">⏰</div>
+          <div><div class="ci-label">Disponibilité</div><div class="ci-value">7j/7 · Réponse rapide</div></div>
+        </div>
+        <div class="contact-cta-row">
+          <a href="tel:+22965339727" class="btn-call">📞 Appeler</a>
+          <a href="https://wa.me/22965339727" target="_blank" class="btn-wa">💬 WhatsApp</a>
+        </div>
+        <div class="social-row">
+          <a href="https://www.facebook.com/profile.php?id=100086452178644" target="_blank" class="social-btn fb" title="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://wa.me/22965339727" target="_blank" class="social-btn wa" title="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div class="map-container reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.0!2d2.0697!3d7.1796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10251914f0aba4d9%3A0xcdf51f1888d03e3f!2sWENSSO%20GOD%20WINNER!5e0!3m2!1sfr!2sbj!4v1620000000000"
+          width="100%" height="100%" style="border:0;display:block"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Localisation WENSSO GOD WINNER – Bohicon, Bénin">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULAIRE DE CONTACT -->
+<section class="contact-form-section">
+  <div class="inner">
+    <div class="section-header reveal">
+      <div class="section-tag">Formulaire</div>
+      <h2 class="section-title">Envoyez-nous un message</h2>
+      <p class="section-sub">Décrivez votre besoin et nous vous répondons rapidement.</p>
+    </div>
+    <div class="form-box reveal">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Votre prénom</label>
+          <input type="text" placeholder="Ex : Kouassi" required>
+        </div>
+        <div class="form-group">
+          <label>Votre nom</label>
+          <input type="text" placeholder="Ex : Adjovi" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Téléphone / WhatsApp</label>
+          <input type="tel" placeholder="Ex : 0123456789" required>
+        </div>
+        <div class="form-group">
+          <label>Email (facultatif)</label>
+          <input type="email" placeholder="exemple@email.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Service souhaité</label>
+        <select>
+          <option value="">-- Choisissez un service --</option>
+          <option>Impression & Photocopie</option>
+          <option>Bâche publicitaire</option>
+          <option>Affiche / Carte de visite</option>
+          <option>Services en ligne (CIP, Acte…)</option>
+          <option>Zone WiFi & Cyber Café</option>
+          <option>Nettoyage professionnel</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Votre message</label>
+        <textarea placeholder="Décrivez votre besoin en détail…"></textarea>
+      </div>
+      <button class="form-submit" onclick="sendMessage()">📩 Envoyer le message</button>
+      <p class="form-note">🔒 Vos données sont confidentielles · Réponse sous 24h · 🚚 Livraison gratuite partout au Bénin</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="index.html" class="logo-wrap">
+        <img src="logo.jpg" alt="WGW Logo" class="logo-mark-img">
+        <div class="logo-text" style="color:#fff">WENSSO GOD WINNER<span style="color:rgba(255,255,255,.45)">Bénin · Services Complets</span></div>
+      </a>
+      <p class="footer-desc">Impression, graphisme, services en ligne, cyber café et nettoyage. Rapide, propre, fiable partout au Bénin.</p>
+    </div>
+    <div class="footer-col"><h4>Services</h4><ul>
+      <li><a href="services.html">Impression & Graphisme</a></li>
+      <li><a href="services.html">Services en Ligne</a></li>
+      <li><a href="services.html">Zone WiFi & Cyber</a></li>
+      <li><a href="services.html">Nettoyage</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact Rapide</h4><ul>
+      <li><a href="tel:+22965339727">📞 0165339727</a></li>
+      <li><a href="mailto:ahononwenceslas@gmail.com">📧 Email</a></li>
+      <li><a href="https://wa.me/22965339727" target="_blank">💬 WhatsApp</a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=100086452178644" target="_blank">📘 Facebook</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 <span>WENSSO GOD WINNER</span> · Tous droits réservés · Bénin</p>
+    <p>Fait avec ❤️ au <span>Bénin</span></p>
+  </div>
+</footer>
+
+<a href="https://wa.me/22965339727" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <div class="wa-float-tooltip">Écrire sur WhatsApp</div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="main.js"></script>
+<script>
+function sendMessage(){
+  alert('✅ Merci ! Votre message a bien été envoyé.\nNous vous répondrons dans les plus brefs délais.\n\n📞 Pour une réponse immédiate, appelez le 0165339727 ou écrivez sur WhatsApp.');
+}
+</script>
+</body>
+</html>

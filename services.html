@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services – WENSSO GOD WINNER</title>
+<link rel="stylesheet" href="style.css">
+<style>
+#services-page{background:var(--off-white);padding:60px 24px 88px}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.service-cat{background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);transition:.3s;border:1.5px solid transparent}
+.service-cat:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(11,46,110,.15);border-color:rgba(46,111,217,.15)}
+.sc-img{width:100%;height:160px;object-fit:cover;display:block}
+.sc-header{padding:20px 28px 16px}
+.sc-icon{font-size:2.2rem;margin-bottom:10px;display:block}
+.sc-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.2rem;color:#fff;margin-bottom:4px}
+.sc-sub{color:rgba(255,255,255,.65);font-size:12.5px}
+.sc-body{padding:20px 28px 26px}
+.sc-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid #F0F4FF}
+.sc-item:last-child{border-bottom:none}
+.sc-dot{width:6px;height:6px;min-width:6px;background:var(--orange);border-radius:50%;margin-top:7px}
+.sc-text{font-size:13.5px;color:#374151;line-height:1.5;flex:1}
+.sc-price{font-weight:700;color:var(--blue-mid);font-size:13.5px;white-space:nowrap}
+.sc-badge{display:inline-block;background:rgba(255,107,0,.1);color:var(--orange);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-top:12px}
+.cta-strip{background:linear-gradient(135deg,var(--blue),var(--blue-mid));padding:60px 24px;text-align:center;color:#fff}
+.cta-strip h2{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:12px}
+.cta-strip p{color:rgba(255,255,255,.7);margin-bottom:28px}
+.cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo-wrap">
+      <img src="logo.jpg" alt="WGW Logo" class="logo-mark-img">
+      <div class="logo-text">WENSSO GOD WINNER<span>Bénin · Services Complets</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="apropos.html">À Propos</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="temoignages.html">Témoignages</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="tel:+22965339727" class="nav-cta">📞 Appeler</a>
+    <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMenu()">🏠 Accueil</a>
+  <a href="services.html" onclick="closeMenu()">🛠️ Services</a>
+  <a href="apropos.html" onclick="closeMenu()">ℹ️ À Propos</a>
+  <a href="galerie.html" onclick="closeMenu()">🖼️ Galerie</a>
+  <a href="temoignages.html" onclick="closeMenu()">⭐ Témoignages</a>
+  <a href="contact.html" onclick="closeMenu()">📩 Contact</a>
+  <a href="tel:+22965339727" style="background:var(--orange);margin-top:8px;font-weight:700">📞 Appeler</a>
+  <a href="https://wa.me/22965339727" target="_blank" style="background:#25D366;font-weight:700">💬 WhatsApp</a>
+</div>
+
+<div class="page-hero">
+  <div class="section-tag">Nos Services</div>
+  <h1>Services Professionnels</h1>
+  <p>Impression, démarches en ligne, cyber café et nettoyage – tout en un seul endroit.</p>
+</div>
+
+<section id="services-page">
+  <div class="inner">
+    <div class="services-grid">
+
+      <!-- Impression & Graphisme -->
+      <div class="service-cat reveal">
+        <img src="imp_1.jpeg" alt="Impression & Graphisme" class="sc-img">
+        <div class="sc-header" style="background:linear-gradient(135deg,var(--blue),var(--blue-mid))">
+          <span class="sc-icon">🖨️</span>
+          <div class="sc-title">Impression & Graphisme</div>
+          <div class="sc-sub">Qualité professionnelle, prix accessibles</div>
+        </div>
+        <div class="sc-body">
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Impression de documents</div><div class="sc-price">25 F/page</div></div>
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Photocopie (claire et nette)</div><div class="sc-price">10 F/page</div></div>
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Réalisation de bâche publicitaire</div><div class="sc-price">Sur devis</div></div>
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Affiche publicitaire</div><div class="sc-price">Sur devis</div></div>
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Carte d'invitation</div><div class="sc-price">Sur devis</div></div>
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Carte de visite professionnelle</div><div class="sc-price">Sur devis</div></div>
+          <span class="sc-badge">⚡ Livraison rapide</span>
+        </div>
+      </div>
+
+      <!-- Services en ligne -->
+      <div class="service-cat reveal">
+        <img src="cip_1.jpeg" alt="Services en Ligne" class="sc-img">
+        <div class="sc-header" style="background:linear-gradient(135deg,#1A4DB8,#2E6FD9)">
+          <span class="sc-icon">🌐</span>
+          <div class="sc-title">Services en Ligne</div>
+          <div class="sc-sub">Démarches administratives simplifiées</div>
+        </div>
+        <div class="sc-body">
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">CIP (Carte d'Identité Personnelle)</div><div class="sc-price">Sur devis</div></div>
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Acte de naissance sécurisé</div><div class="sc-price">Sur devis</div></div>
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Registre de commerce</div><div class="sc-price">Sur devis</div></div>
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Autres services administratifs</div><div class="sc-price">Sur devis</div></div>
+          <span class="sc-badge">🔒 Sécurisé & Fiable</span>
+        </div>
+      </div>
+
+      <!-- WiFi & Cyber -->
+      <div class="service-cat reveal">
+        <img src="serv_2.png" alt="WiFi & Cyber Café" class="sc-img">
+        <div class="sc-header" style="background:linear-gradient(135deg,var(--orange),var(--orange-light))">
+          <span class="sc-icon">📶</span>
+          <div class="sc-title">Zone WiFi & Cyber Café</div>
+          <div class="sc-sub">Connexion haut débit, espace moderne</div>
+        </div>
+        <div class="sc-body">
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Accès WiFi haut débit</div><div class="sc-price">100 F+</div></div>
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Navigation internet</div><div class="sc-price">100 F+</div></div>
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Impression de documents en ligne</div><div class="sc-price">25 F/page</div></div>
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Assistance informatique</div><div class="sc-price">Sur devis</div></div>
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Espace de travail numérique</div><div class="sc-price">Disponible</div></div>
+          <span class="sc-badge">⚡ Connexion rapide</span>
+        </div>
+      </div>
+
+      <!-- Nettoyage -->
+      <div class="service-cat reveal">
+        <img src="net_1.jpg" alt="Nettoyage Professionnel" class="sc-img">
+        <div class="sc-header" style="background:linear-gradient(135deg,#0A1628,#1A2E50)">
+          <span class="sc-icon">🧹</span>
+          <div class="sc-title">Nettoyage Professionnel</div>
+          <div class="sc-sub">Propre, soigné, partout au Bénin</div>
+        </div>
+        <div class="sc-body">
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Nettoyage de bureau</div><div class="sc-price">Sur devis</div></div>
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Nettoyage de boutique</div><div class="sc-price">Sur devis</div></div>
+          <div class="sc-item"><div class="sc-dot"></div><div class="sc-text">Nettoyage de chambre</div><div class="sc-price">Sur devis</div></div>
+          <span class="sc-badge">🚚 Livraison gratuite partout</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <h2>Besoin d'un service ? Contactez-nous !</h2>
+  <p>🚚 Livraison gratuite partout au Bénin · Réponse rapide garantie</p>
+  <div class="cta-btns">
+    <a href="tel:+22965339727" class="btn-primary">📞 Appeler maintenant</a>
+    <a href="https://wa.me/22965339727" target="_blank" class="btn-wa">💬 WhatsApp</a>
+    <a href="contact.html" class="btn-outline">📩 Formulaire de contact</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="index.html" class="logo-wrap">
+        <img src="logo.jpg" alt="WGW Logo" class="logo-mark-img">
+        <div class="logo-text" style="color:#fff">WENSSO GOD WINNER<span style="color:rgba(255,255,255,.45)">Bénin · Services Complets</span></div>
+      </a>
+      <p class="footer-desc">Impression, graphisme, services en ligne, cyber café et nettoyage. Rapide, propre, fiable partout au Bénin.</p>
+    </div>
+    <div class="footer-col"><h4>Services</h4><ul>
+      <li><a href="services.html">Impression & Graphisme</a></li>
+      <li><a href="services.html">Services en Ligne</a></li>
+      <li><a href="services.html">Zone WiFi & Cyber</a></li>
+      <li><a href="services.html">Nettoyage</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact Rapide</h4><ul>
+      <li><a href="tel:+22965339727">📞 0165339727</a></li>
+      <li><a href="mailto:ahononwenceslas@gmail.com">📧 Email</a></li>
+      <li><a href="https://wa.me/22965339727" target="_blank">💬 WhatsApp</a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=100086452178644" target="_blank">📘 Facebook</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 <span>WENSSO GOD WINNER</span> · Tous droits réservés · Bénin</p>
+    <p>Fait avec ❤️ au <span>Bénin</span></p>
+  </div>
+</footer>
+
+<a href="https://wa.me/22965339727" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <div class="wa-float-tooltip">Écrire sur WhatsApp</div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script src="main.js"></script>
+</body>
+</html>

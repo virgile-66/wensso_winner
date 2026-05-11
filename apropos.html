@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À Propos – WENSSO GOD WINNER</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #apropos-page {
+      background: var(--white);
+      padding: 60px 24px 88px
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 80px
+    }
+
+    .about-img-placeholder {
+      aspect-ratio: 4/4;
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 16px 48px rgba(11, 46, 110, .18)
+    }
+
+    .about-img-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .about-badge-float {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background: var(--orange);
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      box-shadow: 0 8px 24px rgba(255, 107, 0, .4);
+      line-height: 1.1;
+      z-index: 2
+    }
+
+    .about-badge-float {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: var(--orange);
+      color: #fff;
+      padding: 16px 20px;
+      border-radius: 16px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      box-shadow: 0 8px 24px rgba(255, 107, 0, .4);
+      line-height: 1.1
+    }
+
+    .about-badge-float small {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      opacity: .8
+    }
+
+    .about-content h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+      color: var(--blue);
+      line-height: 1.2;
+      margin-bottom: 16px
+    }
+
+    .about-content p {
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-size: .97rem
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 8px
+    }
+
+    .value-card {
+      background: var(--off-white);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1.5px solid transparent;
+      transition: .25s
+    }
+
+    .value-card:hover {
+      border-color: var(--orange);
+      background: #FFF9F5
+    }
+
+    .v-icon {
+      font-size: 1.6rem;
+      min-width: 36px;
+      text-align: center
+    }
+
+    .v-text strong {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: .9rem;
+      color: var(--blue);
+      margin-bottom: 2px
+    }
+
+    .v-text span {
+      font-size: 12px;
+      color: var(--gray)
+    }
+
+    /* Timeline */
+    #histoire {
+      background: var(--off-white);
+      padding: 80px 24px
+    }
+
+    .timeline {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--blue), var(--orange))
+    }
+
+    .tl-item {
+      display: flex;
+      gap: 28px;
+      margin-bottom: 36px;
+      position: relative
+    }
+
+    .tl-dot {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      border-radius: 50%;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(11, 46, 110, .3);
+      position: relative;
+      z-index: 1
+    }
+
+    .tl-content {
+      background: #fff;
+      border-radius: 14px;
+      padding: 18px 22px;
+      box-shadow: var(--shadow);
+      flex: 1
+    }
+
+    .tl-year {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      color: var(--orange);
+      font-size: .85rem;
+      margin-bottom: 4px
+    }
+
+    .tl-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: var(--blue);
+      font-size: 1rem;
+      margin-bottom: 6px
+    }
+
+    .tl-desc {
+      color: var(--gray);
+      font-size: 13px;
+      line-height: 1.55
+    }
+
+    /* Mission/Vision */
+    .mv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      margin-top: 16px
+    }
+
+    .mv-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--orange)
+    }
+
+    .mv-icon {
+      font-size: 2.4rem;
+      margin-bottom: 14px
+    }
+
+    .mv-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      color: var(--blue);
+      font-size: 1rem;
+      margin-bottom: 8px
+    }
+
+    .mv-desc {
+      color: var(--gray);
+      font-size: 13.5px;
+      line-height: 1.6
+    }
+
+    @media(max-width:900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr
+      }
+
+      .mv-grid {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo-wrap">
+        <img src="logo.jpg" alt="WGW Logo" class="logo-mark-img">
+        <div class="logo-text">WENSSO GOD WINNER<span>Bénin · Services Complets</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="apropos.html" class="active">À Propos</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="tel:+22965339727" class="nav-cta">📞 Appeler</a>
+      <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMenu()">🏠 Accueil</a>
+    <a href="services.html" onclick="closeMenu()">🛠️ Services</a>
+    <a href="apropos.html" onclick="closeMenu()">ℹ️ À Propos</a>
+    <a href="galerie.html" onclick="closeMenu()">🖼️ Galerie</a>
+    <a href="temoignages.html" onclick="closeMenu()">⭐ Témoignages</a>
+    <a href="contact.html" onclick="closeMenu()">📩 Contact</a>
+    <a href="tel:+22965339727" style="background:var(--orange);margin-top:8px;font-weight:700">📞 Appeler</a>
+    <a href="https://wa.me/22965339727" target="_blank" style="background:#25D366;font-weight:700">💬 WhatsApp</a>
+  </div>
+
+  <div class="page-hero">
+    <div class="section-tag">Notre Histoire</div>
+    <h1>À Propos de Nous</h1>
+    <p>Découvrez qui nous sommes, notre mission et pourquoi des centaines de clients nous font confiance.</p>
+  </div>
+
+  <section id="apropos-page">
+    <div class="inner">
+      <div class="about-grid">
+        <div style="position:relative" class="reveal">
+          <div class="about-img-placeholder">
+            <img src="photo_pro.jpg" alt="WENSSO GOD WINNER – Photo professionnelle">
+          </div>
+          <div class="about-badge-float">5★<small>Évaluation</small></div>
+        </div>
+        <div class="about-content reveal">
+          <div class="section-tag">À Propos de Nous</div>
+          <h2>WENSSO GOD WINNER,<br>votre partenaire de confiance</h2>
+          <p>Basée au Bénin, <strong>WENSSO GOD WINNER</strong> est une entreprise polyvalente fondée avec la vision de
+            rendre les services professionnels accessibles à tous, partout sur le territoire béninois.</p>
+          <p>Nous proposons des services de qualité dans l'impression, le graphisme, les démarches administratives en
+            ligne, l'accès internet et le nettoyage professionnel. Notre engagement : être rapides, propres et fiables,
+            quoi qu'il arrive.</p>
+          <p>Avec une <strong>livraison gratuite partout au Bénin</strong>, nous mettons tout en œuvre pour que votre
+            expérience soit simple et agréable.</p>
+          <div class="values-grid">
+            <div class="value-card">
+              <div class="v-icon">⚡</div>
+              <div class="v-text"><strong>Rapidité</strong><span>Service immédiat et efficace</span></div>
+            </div>
+            <div class="value-card">
+              <div class="v-icon">🏆</div>
+              <div class="v-text"><strong>Qualité</strong><span>Résultats professionnels</span></div>
+            </div>
+            <div class="value-card">
+              <div class="v-icon">🤝</div>
+              <div class="v-text"><strong>Fiabilité</strong><span>Toujours présents pour vous</span></div>
+            </div>
+            <div class="value-card">
+              <div class="v-icon">📍</div>
+              <div class="v-text"><strong>Disponibilité</strong><span>Partout au Bénin, 7j/7</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission Vision Valeurs -->
+      <div class="section-header reveal">
+        <div class="section-tag">Ce qui nous guide</div>
+        <h2 class="section-title">Mission, Vision & Valeurs</h2>
+      </div>
+      <div class="mv-grid">
+        <div class="mv-card reveal">
+          <div class="mv-icon">🎯</div>
+          <div class="mv-title">Notre Mission</div>
+          <div class="mv-desc">Offrir des services professionnels de qualité à prix accessibles, avec rapidité et
+            fiabilité, pour accompagner particuliers et entreprises partout au Bénin.</div>
+        </div>
+        <div class="mv-card reveal">
+          <div class="mv-icon">🔭</div>
+          <div class="mv-title">Notre Vision</div>
+          <div class="mv-desc">Devenir le prestataire de référence au Bénin pour les services d'impression, de
+            graphisme, de cyber café et de nettoyage professionnel.</div>
+        </div>
+        <div class="mv-card reveal">
+          <div class="mv-icon">💎</div>
+          <div class="mv-title">Nos Valeurs</div>
+          <div class="mv-desc">Intégrité, excellence, service client, innovation et engagement envers la communauté
+            béninoise. Chaque client mérite le meilleur.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="histoire">
+    <div class="inner">
+      <div class="section-header reveal">
+        <div class="section-tag">Notre Parcours</div>
+        <h2 class="section-title">Notre Histoire</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-dot">🚀</div>
+          <div class="tl-content">
+            <div class="tl-year">Création</div>
+            <div class="tl-title">Naissance de WENSSO GOD WINNER</div>
+            <div class="tl-desc">Lancement de l'entreprise avec les premiers services d'impression et de photocopie au
+              Bénin.</div>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot">📶</div>
+          <div class="tl-content">
+            <div class="tl-year">Expansion</div>
+            <div class="tl-title">Ouverture de la Zone WiFi & Cyber Café</div>
+            <div class="tl-desc">Lancement du cyber café avec connexion haut débit pour répondre aux besoins numériques
+              croissants.</div>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot">🌐</div>
+          <div class="tl-content">
+            <div class="tl-year">Innovation</div>
+            <div class="tl-title">Lancement des Services en Ligne</div>
+            <div class="tl-desc">Ajout des services administratifs en ligne : CIP, acte de naissance, registre de
+              commerce.</div>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot">🧹</div>
+          <div class="tl-content">
+            <div class="tl-year">Aujourd'hui</div>
+            <div class="tl-title">Services de Nettoyage & Livraison Gratuite</div>
+            <div class="tl-desc">Extension aux services de nettoyage professionnel et déploiement de la livraison
+              gratuite partout au Bénin.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <a href="index.html" class="logo-wrap">
+          <img src="logo.jpg" alt="WGW Logo" class="logo-mark-img">
+          <div class="logo-text" style="color:#fff">WENSSO GOD WINNER<span style="color:rgba(255,255,255,.45)">Bénin ·
+              Services Complets</span></div>
+        </a>
+        <p class="footer-desc">Impression, graphisme, services en ligne, cyber café et nettoyage. Rapide, propre, fiable
+          partout au Bénin.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Impression & Graphisme</a></li>
+          <li><a href="services.html">Services en Ligne</a></li>
+          <li><a href="services.html">Zone WiFi & Cyber</a></li>
+          <li><a href="services.html">Nettoyage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Rapide</h4>
+        <ul>
+          <li><a href="tel:+22965339727">📞 0165339727</a></li>
+          <li><a href="mailto:ahononwenceslas@gmail.com">📧 Email</a></li>
+          <li><a href="https://wa.me/22965339727" target="_blank">💬 WhatsApp</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=100086452178644" target="_blank">📘 Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 <span>WENSSO GOD WINNER</span> · Tous droits réservés · Bénin</p>
+      <p>Fait avec ❤️ au <span>Bénin</span></p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/22965339727" class="wa-float" target="_blank" aria-label="WhatsApp">
+    <div class="wa-float-tooltip">Écrire sur WhatsApp</div>
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+  <script src="main.js"></script>
+</body>
+
+</html>
