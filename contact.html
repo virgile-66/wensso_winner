@@ -142,55 +142,164 @@
     </div>
   </div>
 </section>
-
 <!-- FORMULAIRE DE CONTACT -->
 <section class="contact-form-section">
   <div class="inner">
+
     <div class="section-header reveal">
       <div class="section-tag">Formulaire</div>
-      <h2 class="section-title">Envoyez-nous un message</h2>
-      <p class="section-sub">Décrivez votre besoin et nous vous répondons rapidement.</p>
+
+      <h2 class="section-title">
+        Envoyez-nous un message
+      </h2>
+
+      <p class="section-sub">
+        Décrivez votre besoin et nous vous répondrons rapidement.
+      </p>
     </div>
+
     <div class="form-box reveal">
-      <div class="form-row">
-        <div class="form-group">
-          <label>Votre prénom</label>
-          <input type="text" placeholder="Ex : Kouassi" required>
+
+      <form action="https://api.staticforms.dev/submit" method="POST">
+
+        <!-- CLÉ API -->
+        <input 
+          type="hidden" 
+          name="apiKey"
+          value="VOTRE_VRAIE_CLE_API"
+        >
+
+        <!-- EMAIL DE RÉCEPTION -->
+        <input 
+          type="hidden"
+          name="replyTo"
+          value="ahononwenceslas@gmail.com"
+        >
+
+        <!-- Sujet du mail -->
+        <input
+          type="hidden"
+          name="subject"
+          value="Nouveau message depuis le site"
+        >
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label>Votre prénom</label>
+
+            <input 
+              type="text"
+              name="prenom"
+              placeholder="Ex : Kouassi"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Votre nom</label>
+
+            <input 
+              type="text"
+              name="nom"
+              placeholder="Ex : Adjovi"
+              required
+            >
+          </div>
+
         </div>
-        <div class="form-group">
-          <label>Votre nom</label>
-          <input type="text" placeholder="Ex : Adjovi" required>
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label>Téléphone / WhatsApp</label>
+
+            <input 
+              type="tel"
+              name="telephone"
+              placeholder="Ex : 0123456789"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Email (facultatif)</label>
+
+            <input 
+              type="email"
+              name="email"
+              placeholder="exemple@email.com"
+            >
+          </div>
+
         </div>
-      </div>
-      <div class="form-row">
+
         <div class="form-group">
-          <label>Téléphone / WhatsApp</label>
-          <input type="tel" placeholder="Ex : 0123456789" required>
+
+          <label>Service souhaité</label>
+
+          <select name="service" required>
+
+            <option value="">
+              -- Choisissez un service --
+            </option>
+
+            <option>
+              Impression & Photocopie
+            </option>
+
+            <option>
+              Bâche publicitaire
+            </option>
+
+            <option>
+              Affiche / Carte de visite
+            </option>
+
+            <option>
+              Services en ligne (CIP, Acte…)
+            </option>
+
+            <option>
+              Zone WiFi & Cyber Café
+            </option>
+
+            <option>
+              Nettoyage professionnel
+            </option>
+
+            <option>
+              Autre
+            </option>
+
+          </select>
+
         </div>
+
         <div class="form-group">
-          <label>Email (facultatif)</label>
-          <input type="email" placeholder="exemple@email.com">
+
+          <label>Votre message</label>
+
+          <textarea
+            name="message"
+            placeholder="Décrivez votre besoin en détail…"
+            required
+          ></textarea>
+
         </div>
-      </div>
-      <div class="form-group">
-        <label>Service souhaité</label>
-        <select>
-          <option value="">-- Choisissez un service --</option>
-          <option>Impression & Photocopie</option>
-          <option>Bâche publicitaire</option>
-          <option>Affiche / Carte de visite</option>
-          <option>Services en ligne (CIP, Acte…)</option>
-          <option>Zone WiFi & Cyber Café</option>
-          <option>Nettoyage professionnel</option>
-          <option>Autre</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Votre message</label>
-        <textarea placeholder="Décrivez votre besoin en détail…"></textarea>
-      </div>
-      <button class="form-submit" onclick="sendMessage()">📩 Envoyer le message</button>
-      <p class="form-note">🔒 Vos données sont confidentielles · Réponse sous 24h · 🚚 Livraison gratuite partout au Bénin</p>
+
+        <button type="submit" class="form-submit">
+          📩 Envoyer le message
+        </button>
+
+      </form>
+
+      <p class="form-note">
+        🔒 Vos données sont confidentielles ·
+        Réponse sous 24h ·
+        🚚 Livraison gratuite partout au Bénin
+      </p>
+
     </div>
   </div>
 </section>
